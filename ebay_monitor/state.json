@@ -1,110 +1,327 @@
 {
+  "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-2-in-1-touchscreen-laptop-intel-core-ultra-7-256v-2024-16gb-memory-1tb-storage-ice-blue/J3K4L6XF7K": {
+    "title": "Dell - Plus - Copilot+ PC - 16\" 2K 2-in-1 Touchscreen Laptop - Intel Core Ultra 7 256V 2024 - 16GB Memory - 1TB Storage - Ice Blue",
+    "price": "$939.00",
+    "sold_out": true,
+    "review_count": 790,
+    "url": "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-2-in-1-touchscreen-laptop-intel-core-ultra-7-256v-2024-16gb-memory-1tb-storage-ice-blue/J3K4L6XF7K",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/hp-omen-16-2k-144hz-gaming-laptop-amd-ryzen-9-8940hx-2025-32gb-ddr5-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGH2L954G": {
+    "title": "HP OMEN - 16\" 2K 144Hz Gaming Laptop - AMD Ryzen 9 8940HX 2025 - 32GB DDR5 Memory - NVIDIA GeForce RTX 5060 - 1TB SSD - Shadow Black",
+    "price": "$1,489.00",
+    "sold_out": true,
+    "review_count": 487,
+    "url": "https://www.bestbuy.com/product/hp-omen-16-2k-144hz-gaming-laptop-amd-ryzen-9-8940hx-2025-32gb-ddr5-memory-nvidia-geforce-rtx-5060-1tb-ssd-shadow-black/JJGH2L954G",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/lenovo-loq-15-6-full-hd-gaming-laptop-amd-ryzen-5-7235hs-16gb-memory-nvidia-geforce-rtx-4050-512gb-ssd-luna-grey/JJGH3SKKHG": {
+    "title": "Lenovo - LOQ 15.6\" Full HD Gaming Laptop - AMD Ryzen 5 7235HS - 16GB Memory - NVIDIA GeForce RTX 4050 - 512GB SSD - Luna Grey",
+    "price": "$799.99",
+    "sold_out": true,
+    "review_count": 150,
+    "url": "https://www.bestbuy.com/product/lenovo-loq-15-6-full-hd-gaming-laptop-amd-ryzen-5-7235hs-16gb-memory-nvidia-geforce-rtx-4050-512gb-ssd-luna-grey/JJGH3SKKHG",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/hp-15-6-full-hd-touch-screen-laptop-intel-core-i7-1355u-2023-16gb-memory-512gb-ssd-natural-silver/JJGRPJV92P": {
+    "title": "HP - 15.6\" Full HD Touch-Screen Laptop - Intel Core i7 1355U 2023 - 16GB Memory - 512GB SSD - Natural Silver",
+    "price": "$599.99",
+    "sold_out": false,
+    "review_count": 1934,
+    "url": "https://www.bestbuy.com/product/hp-15-6-full-hd-touch-screen-laptop-intel-core-i7-1355u-2023-16gb-memory-512gb-ssd-natural-silver/JJGRPJV92P",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-laptop-intel-core-ultra-5-226v-2024-16gb-memory-512gb-storage-ice-blue/J3K4L6XFC7": {
+    "title": "Dell - Plus- 16\" 2K Laptop - Intel Core Ultra 5 226V 2024 - 16GB Memory - 512 GB Storage - Copilot+ PC - Ice Blue",
+    "price": "$899.99",
+    "sold_out": false,
+    "review_count": 34,
+    "url": "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-laptop-intel-core-ultra-5-226v-2024-16gb-memory-512gb-storage-ice-blue/J3K4L6XFC7",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/acer-predator-helios-18-ai-18-240hz-gaming-laptop-3840-x-2400-intel-core-ultra-9-nvidia-geforce-rtx-5090-64gb-2tb-abyssal-black/JJ8V8HGRGL": {
+    "title": "Acer - Predator Helios 18 AI- 18\" 240Hz Gaming Laptop - 3840 x 2400- Intel Core Ultra 9 - NVIDIA GeForce RTX 5090 \u2013 64GB \u2013 2TB - Abyssal Black",
+    "price": "$3,499.99",
+    "sold_out": false,
+    "review_count": 11,
+    "url": "https://www.bestbuy.com/product/acer-predator-helios-18-ai-18-240hz-gaming-laptop-3840-x-2400-intel-core-ultra-9-nvidia-geforce-rtx-5090-64gb-2tb-abyssal-black/JJ8V8HGRGL",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/lenovo-legion-pro-5-16-2-5k-oled-gaming-laptop-amd-ryzen-7-8745hx-2025-32gb-ram-nvidia-geforce-rtx-5060-1tb-ssd-eclipse-black/JJGSHGT56G": {
+    "title": "Lenovo - Legion Pro 5 16\" 2.5K OLED Gaming Laptop - AMD Ryzen 7 8745HX 2025 - 32GB RAM - NVIDIA GeForce RTX 5060 - 1TB SSD - Eclipse Black",
+    "price": "$1,464.99",
+    "sold_out": false,
+    "review_count": 159,
+    "url": "https://www.bestbuy.com/product/lenovo-legion-pro-5-16-2-5k-oled-gaming-laptop-amd-ryzen-7-8745hx-2025-32gb-ram-nvidia-geforce-rtx-5060-1tb-ssd-eclipse-black/JJGSHGT56G",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/lenovo-ideapad-1-15-6-full-hd-laptop-amd-ryzen-5-7520u-2022-8gb-memory-256gb-ssd-abyss-blue/JJGH3YQ6RJ": {
+    "title": "Lenovo - IdeaPad 1 15.6\" Full HD Laptop - AMD Ryzen 5 7520U 2022 - 8GB Memory- 256GB SSD - Abyss Blue",
+    "price": "$369.99",
+    "sold_out": true,
+    "review_count": 485,
+    "url": "https://www.bestbuy.com/product/lenovo-ideapad-1-15-6-full-hd-laptop-amd-ryzen-5-7520u-2022-8gb-memory-256gb-ssd-abyss-blue/JJGH3YQ6RJ",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/asus-vivobook-14-14-fhd-laptop-intel-core-5-120u-with-8gb-memory-256gb-ssd-quiet-blue/JJGHGPYRYX": {
+    "title": "ASUS - Vivobook 14 14\" FHD Laptop - Intel Core 5 120U with 8GB Memory - 256GB SSD - Quiet Blue",
+    "price": "$329.99",
+    "sold_out": false,
+    "review_count": 109,
+    "url": "https://www.bestbuy.com/product/asus-vivobook-14-14-fhd-laptop-intel-core-5-120u-with-8gb-memory-256gb-ssd-quiet-blue/JJGHGPYRYX",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/asus-vivobook-16-16-fhd-laptop-copilot-pc-amd-ryzen-ai-5-330-with-16gb-memory-512gb-ssd-quiet-blue/JJGHGPPQ7T": {
+    "title": "ASUS - Vivobook 16 16\" FHD+ Laptop - Copilot+ PC - AMD Ryzen AI 5 330 with 16GB Memory - 512GB SSD - Quiet Blue",
+    "price": "$499.99",
+    "sold_out": false,
+    "review_count": 80,
+    "url": "https://www.bestbuy.com/product/asus-vivobook-16-16-fhd-laptop-copilot-pc-amd-ryzen-ai-5-330-with-16gb-memory-512gb-ssd-quiet-blue/JJGHGPPQ7T",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774300704.1486862
+  },
+  "https://www.bestbuy.com/product/asus-zenbook-a14-14-fhd-oled-laptop-copilot-pc-snapdragon-x-plus-16gb-ram-512gb-ssd-zabriskie-beige/JJGGLH86J4": {
+    "title": "ASUS - Zenbook A14 14\" FHD+ OLED Laptop - Copilot+ PC - Snapdragon X Plus - 16GB RAM - 512GB SSD - Zabriskie Beige",
+    "price": "$849.99",
+    "sold_out": true,
+    "review_count": 395,
+    "url": "https://www.bestbuy.com/product/asus-zenbook-a14-14-fhd-oled-laptop-copilot-pc-snapdragon-x-plus-16gb-ram-512gb-ssd-zabriskie-beige/JJGGLH86J4",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774304892.9914238
+  },
+  "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-touchscreen-laptop-amd-ryzen-ai-7-350-2025-32gb-memory-1tb-storage-ice-blue/J3K4L63SVF": {
+    "title": "Dell - Plus - Copilot+ PC - 16\" 2K Touchscreen Laptop - AMD Ryzen AI 7 350 2025 - 32GB Memory - 1TB Storage - Ice Blue",
+    "price": "$899.99",
+    "sold_out": false,
+    "review_count": 484,
+    "url": "https://www.bestbuy.com/product/dell-plus-copilot-pc-16-2k-touchscreen-laptop-amd-ryzen-ai-7-350-2025-32gb-memory-1tb-storage-ice-blue/J3K4L63SVF",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774304892.9914238
+  },
+  "https://www.bestbuy.com/product/hp-omnibook-x-flip-2-in-1-copilot-pc-16-2k-touch-screen-laptop-intel-core-ultra-7-256v-24-16gb-memory-1tb-ssd-eclipse-gray/JJGQJRKGR5": {
+    "title": "HP - OmniBook X Flip 2-in-1 - Copilot+ PC - 16\" 2K Touch-Screen Laptop - Intel Core Ultra 7 256V '24 - 16GB Memory - 1TB SSD - Eclipse Gray",
+    "price": "$799.99",
+    "sold_out": false,
+    "review_count": 1447,
+    "url": "https://www.bestbuy.com/product/hp-omnibook-x-flip-2-in-1-copilot-pc-16-2k-touch-screen-laptop-intel-core-ultra-7-256v-24-16gb-memory-1tb-ssd-eclipse-gray/JJGQJRKGR5",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774304892.9914238
+  },
+  "https://www.bestbuy.com/product/dell-plus-14-2k-2-in-1-touchscreen-laptop-intel-core-ultra-7-256v-2024-16gb-memory-1tb-storage-copilot-pc-ice-blue/J3K4L6XF79": {
+    "title": "Dell - Plus - 14\" 2K 2-in-1 Touchscreen Laptop - Intel Core Ultra 7 256V 2024 - 16GB Memory - 1TB Storage - Copilot+ PC - Ice Blue",
+    "price": "$799.99",
+    "sold_out": false,
+    "review_count": 448,
+    "url": "https://www.bestbuy.com/product/dell-plus-14-2k-2-in-1-touchscreen-laptop-intel-core-ultra-7-256v-2024-16gb-memory-1tb-storage-copilot-pc-ice-blue/J3K4L6XF79",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774296980.8088827
+  },
+  "https://www.bestbuy.com/product/acer-predator-helios-neo-16s-ai-gaming-laptop-16-oled-240hz-intel-core-ultra-9-nvidia-geforce-rtx-5070ti-32gb-1tb-obsidian-black/JJ8V8H38XT/sku/11835729": {
+    "title": "Acer - Refurbished Excellent - Predator Helios Neo 16S AI Gaming Laptop - 16\" OLED 240Hz - Intel Core Ultra 9 - NVIDIA GeForce RTX 5070Ti \u2013 32GB \u2013 1TB - Obsidian Black",
+    "price": "$1,371.99",
+    "sold_out": true,
+    "review_count": 16,
+    "url": "https://www.bestbuy.com/product/acer-predator-helios-neo-16s-ai-gaming-laptop-16-oled-240hz-intel-core-ultra-9-nvidia-geforce-rtx-5070ti-32gb-1tb-obsidian-black/JJ8V8H38XT/sku/11835729",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774296980.8088827
+  },
+  "https://www.bestbuy.com/product/dell-inspiron-14-14-2k-2-in-1-touchscreen-laptop-amd-ryzen-5-8640hs-2023-8gb-memory-512-gb-storage-midnight-blue/J3K4L6JSFL/sku/10347264": {
+    "title": "Dell - Inspiron 14 - 14\"\u00a02K 2-in-1 Touchscreen Laptop - AMD Ryzen 5 8640HS 2023 - 8GB Memory - 512 GB Storage - Midnight Blue",
+    "price": "$579.99",
+    "sold_out": true,
+    "review_count": 570,
+    "url": "https://www.bestbuy.com/product/dell-inspiron-14-14-2k-2-in-1-touchscreen-laptop-amd-ryzen-5-8640hs-2023-8gb-memory-512-gb-storage-midnight-blue/J3K4L6JSFL/sku/10347264",
+    "sold_window": {
+      "window_date": "2026-03-23",
+      "sold_at_start": null,
+      "alerted": false
+    },
+    "last_check_time": 1774296980.8088827
+  },
   "https://www.ebay.com/itm/277352801036": {
     "title": "Acer Predator Helios Neo AI 16S Gaming Laptop RTX 5070 Ti Certified Refurbished",
-    "price": "US $1,399.64",
+    "price": "US $1,371.99",
     "sold_out": false,
-    "sold_count": 1935,
+    "sold_count": 1974,
     "url": "https://www.ebay.com/itm/277352801036",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 1929,
+      "window_date": "2026-03-23",
+      "sold_at_start": 1971,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/177609653397": {
     "title": "Dell XPS 13 \u2013 13.4\" FHD+ \u2013 Core Ultra 7 \u2013 16GB/512GB \u2013 Copilot+ PC",
-    "price": "US $819.99",
-    "sold_out": false,
-    "sold_count": null,
+    "price": "US $749.99",
+    "sold_out": true,
+    "sold_count": 3,
     "url": "https://www.ebay.com/itm/177609653397",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": null,
+      "window_date": "2026-03-23",
+      "sold_at_start": 3,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/356227859677": {
     "title": "Apple iPhone 15 Pro Max A2849 256GB Unlocked Very Good",
-    "price": "US $581.10",
+    "price": "US $575.99",
     "sold_out": false,
-    "sold_count": 46838,
+    "sold_count": 47892,
     "url": "https://www.ebay.com/itm/356227859677",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 46815,
+      "window_date": "2026-03-23",
+      "sold_at_start": 47768,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/357492955429": {
     "title": "Apple iPhone 15 Pro Max A2849 1TB Natural Unlocked Very Good Condition",
-    "price": "US $627.36",
+    "price": "US $627.99",
     "sold_out": false,
-    "sold_count": 1983,
+    "sold_count": 2020,
     "url": "https://www.ebay.com/itm/357492955429",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 1980,
+      "window_date": "2026-03-23",
+      "sold_at_start": 2019,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/357482540114": {
     "title": "Apple iPhone 15 Pro Max A2849 512GB Unlocked Excellent Condition",
-    "price": "US $636.77",
+    "price": "US $634.99",
     "sold_out": false,
-    "sold_count": 810,
+    "sold_count": 871,
     "url": "https://www.ebay.com/itm/357482540114",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 805,
+      "window_date": "2026-03-23",
+      "sold_at_start": 863,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/356227813818": {
     "title": "Apple iPhone 15 Pro A2848 256GB Unlocked - Very Good Condition",
-    "price": "US $490.84",
+    "price": "US $490.99",
     "sold_out": false,
-    "sold_count": 10469,
+    "sold_count": 10621,
     "url": "https://www.ebay.com/itm/356227813818",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 10465,
+      "window_date": "2026-03-23",
+      "sold_at_start": 10608,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/356605671415": {
     "title": "Apple iPhone 16 Plus 128GB Unlocked Very Good Condition",
-    "price": "US $573.20",
+    "price": "US $568.99",
     "sold_out": false,
-    "sold_count": 3848,
+    "sold_count": 3975,
     "url": "https://www.ebay.com/itm/356605671415",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 3845,
+      "window_date": "2026-03-23",
+      "sold_at_start": 3973,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/357341419650": {
     "title": "Apple iPhone 15 Pro Max A2849 1TB Unlocked Excellent Condition",
-    "price": "US $699.62",
+    "price": "US $678.99",
     "sold_out": false,
-    "sold_count": 445,
+    "sold_count": 455,
     "url": "https://www.ebay.com/itm/357341419650",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 443,
+      "window_date": "2026-03-23",
+      "sold_at_start": 452,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   },
   "https://www.ebay.com/itm/116924971164": {
     "title": "DELL DC16251 16\" WUXGA Touchscreen 7-150U 1.8GHz Intel UHD Graphics 16GB RAM 1TB",
     "price": "US $501.00",
     "sold_out": true,
-    "sold_count": 9,
+    "sold_count": 13,
     "url": "https://www.ebay.com/itm/116924971164",
     "sold_window": {
-      "window_date": "2026-03-16",
-      "sold_at_start": 9,
+      "window_date": "2026-03-23",
+      "sold_at_start": 13,
       "alerted": false
-    }
+    },
+    "last_check_time": 1774313035.6319036
   }
 }

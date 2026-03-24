@@ -1,0 +1,11 @@
+# Monitor Configuration
+# Add URLs to monitor (one per line)
+# Supports both eBay and BestBuy URLs
+
+# eBay URLs (sử dụng luồng cũ - Playwright headless)
+https://www.ebay.com/itm/123456789
+
+# BestBuy URLs (sử dụng Omnilogin profile đầu tiên)
+https://www.bestbuy.com/site/product-name/1234567.p
+
+# Lines starting with # are comments and will be ignored

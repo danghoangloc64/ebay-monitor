@@ -5,6 +5,7 @@ import requests
 from datetime import datetime
 from dotenv import load_dotenv
 from scraper import scrape_item, close_browser
+from bestbuy_scraper import BestBuyScraper
 
 load_dotenv()
 
@@ -12,9 +13,13 @@ BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 CONFIG_FILE = 'config.txt'
 STATE_FILE = 'state.json'
-CHECK_INTERVAL = 150        # seconds between each check
-SOLD_THRESHOLD = 10         # alert if sold count in 24h window exceeds this
-RESET_HOUR = 21             # 9 PM — window resets and alert fires
+CHECK_INTERVAL_EBAY = 150        # seconds between each eBay check
+CHECK_INTERVAL_BESTBUY = 3600    # seconds between each BestBuy check (1 hour)
+SOLD_THRESHOLD = 10              # alert if sold count in 24h window exceeds this
+RESET_HOUR = 21                  # 9 PM — window resets and alert fires
+
+# BestBuy scraper instance (using first Omnilogin profile)
+bestbuy_scraper = None
 
 # ── Telegram ──────────────────────────────────────────────────────────────────
 
@@ -63,56 +68,134 @@ def current_window_date() -> str:
 def is_reset_time() -> bool:
     """True during the CHECK_INTERVAL window right after 9 PM."""
     now = datetime.now()
-    return now.hour == RESET_HOUR and now.minute < (CHECK_INTERVAL // 60 + 1)
+    return now.hour == RESET_HOUR and now.minute < (CHECK_INTERVAL_EBAY // 60 + 1)
 
 # ── Alert messages ────────────────────────────────────────────────────────────
 
+def get_platform_name(url: str) -> str:
+    """Get platform name from URL"""
+    if 'bestbuy.com' in url.lower():
+        return 'BestBuy'
+    elif 'ebay.com' in url.lower():
+        return 'eBay'
+    return 'Unknown'
+
 def build_change_alert(data: dict, changes: list[str]) -> str:
+    platform = get_platform_name(data['url'])
     lines = [
         f'🔔 <b>{data["title"]}</b>',
         '',
         '\n'.join(changes),
         '',
         f'💰 Giá: <b>{data.get("price") or "N/A"}</b>',
-        f'🔗 <a href="{data["url"]}">Xem trên eBay</a>',
+        f'🔗 <a href="{data["url"]}">Xem trên {platform}</a>',
     ]
     return '\n'.join(lines)
 
 def build_snapshot(data: dict) -> str:
+    platform = get_platform_name(data['url'])
     status = '❌ Hết hàng' if data.get('sold_out') else '✅ Còn hàng'
     lines = [
         f'🛒 <b>{data["title"]}</b>',
         '',
         f'💰 Giá: <b>{data.get("price") or "N/A"}</b>',
         f'📦 Trạng thái: {status}',
-        f'📊 Đã bán: <b>{data.get("sold_count") or "N/A"}</b>',
-        '',
-        f'🔗 <a href="{data["url"]}">Xem trên eBay</a>',
     ]
+    
+    # Only show sold count for eBay
+    if 'ebay.com' in data['url'].lower():
+        lines.append(f'📊 Đã bán: <b>{data.get("sold_count") or "N/A"}</b>')
+    
+    lines.extend([
+        '',
+        f'🔗 <a href="{data["url"]}">Xem trên {platform}</a>',
+    ])
     return '\n'.join(lines)
 
 def build_sold_alert(data: dict, sold_in_window: int) -> str:
+    platform = get_platform_name(data['url'])
     lines = [
         f'🔥 <b>{data["title"]}</b>',
         '',
-        f'� Đã bán <b>{sold_in_window}</b> lượt trong 24h qua!',
+        f'📈 Đã bán <b>{sold_in_window}</b> lượt trong 24h qua!',
         '',
-        f'� Giá: <b>{data.get("price") or "N/A"}</b>',
-        f'🔗 <a href="{data["url"]}">Xem trên eBay</a>',
+        f'💰 Giá: <b>{data.get("price") or "N/A"}</b>',
+        f'🔗 <a href="{data["url"]}">Xem trên {platform}</a>',
     ]
     return '\n'.join(lines)
 
 # ── Main check ────────────────────────────────────────────────────────────────
+
+def is_bestbuy_url(url: str) -> bool:
+    """Check if URL is from BestBuy"""
+    return 'bestbuy.com' in url.lower()
+
+def is_ebay_url(url: str) -> bool:
+    """Check if URL is from eBay"""
+    return 'ebay.com' in url.lower()
+
+def scrape_url(url: str) -> dict:
+    """Scrape URL based on domain"""
+    global bestbuy_scraper
+    
+    if is_bestbuy_url(url):
+        # Use BestBuy scraper with Omnilogin (visible mode - BestBuy blocks headless)
+        if bestbuy_scraper is None:
+            bestbuy_scraper = BestBuyScraper(headless=False)
+        result = bestbuy_scraper.scrape_item(url)
+        return result
+    elif is_ebay_url(url):
+        # Close BestBuy browser before using eBay scraper to avoid Playwright conflicts
+        if bestbuy_scraper is not None:
+            try:
+                bestbuy_scraper.close_browser()
+                print("[monitor] Closed BestBuy browser before eBay scrape")
+            except Exception as e:
+                print(f"[monitor] Error closing BestBuy browser: {e}")
+            bestbuy_scraper = None
+        
+        # Use eBay scraper (original flow)
+        return scrape_item(url)
+    else:
+        print(f'[monitor] Unknown domain for {url}')
+        return None
 
 def check_items(first_run: bool = False):
     urls = load_config()
     state = load_state()
     window = current_window_date()
     reset_now = is_reset_time()
+    
+    # Track last check time for each URL
+    now = time.time()
 
     for url in urls:
+        # Check if enough time has passed since last check
+        entry = state.get(url, {})
+        last_check = entry.get('last_check_time', 0)
+        
+        # Determine check interval based on platform
+        if is_bestbuy_url(url):
+            check_interval = CHECK_INTERVAL_BESTBUY
+        else:
+            check_interval = CHECK_INTERVAL_EBAY
+        
+        # Skip if not enough time has passed
+        if not first_run and (now - last_check) < check_interval:
+            remaining = int(check_interval - (now - last_check))
+            print(f'[monitor] Skipping {url} (check again in {remaining}s)')
+            continue
+        
         print(f'[monitor] Checking {url}')
-        data = scrape_item(url)
+        data = scrape_url(url)
+        
+        # Close eBay browser after each eBay scrape to avoid conflicts
+        if is_ebay_url(url):
+            try:
+                close_browser()
+            except:
+                pass
+        
         if data is None:
             print(f'[monitor] Could not scrape {url}, skipping')
             continue
@@ -178,23 +261,32 @@ def check_items(first_run: bool = False):
 
         entry.update(data)
         entry['sold_window'] = sold_data
+        entry['last_check_time'] = now  # Update last check time
         state[url] = entry
 
     save_state(state)
 
 def main():
-    print(f'[monitor] Starting — interval {CHECK_INTERVAL}s, sold alert at {RESET_HOUR}:00')
-    send_message(f'🤖 <b>eBay Monitor đã khởi động!</b>')
+    global bestbuy_scraper
+    print(f'[monitor] Starting')
+    print(f'  eBay check interval: {CHECK_INTERVAL_EBAY}s ({CHECK_INTERVAL_EBAY//60} minutes)')
+    print(f'  BestBuy check interval: {CHECK_INTERVAL_BESTBUY}s ({CHECK_INTERVAL_BESTBUY//60} minutes)')
+    print(f'  Sold alert at {RESET_HOUR}:00')
+    send_message('🤖 <b>Monitor đã khởi động!</b>')
 
     try:
         check_items(first_run=False)
 
         while True:
-            print(f'[monitor] Sleeping {CHECK_INTERVAL}s...')
-            time.sleep(CHECK_INTERVAL)
+            # Use shorter interval for main loop
+            sleep_time = CHECK_INTERVAL_EBAY
+            print(f'[monitor] Sleeping {sleep_time}s...')
+            time.sleep(sleep_time)
             check_items()
     finally:
         close_browser()
+        if bestbuy_scraper:
+            bestbuy_scraper.close_browser()
 
 if __name__ == '__main__':
     main()

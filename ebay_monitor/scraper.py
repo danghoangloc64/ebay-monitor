@@ -17,10 +17,18 @@ USER_AGENT = (
 def get_context() -> BrowserContext:
     global _playwright, _browser, _context
     if _context is None:
-        _playwright = sync_playwright().start()
-        _browser = _playwright.chromium.launch(headless=True)
-        _context = _browser.new_context(user_agent=USER_AGENT, locale='en-US')
-        print('[scraper] Browser started')
+        try:
+            _playwright = sync_playwright().start()
+            _browser = _playwright.chromium.launch(headless=True)
+            _context = _browser.new_context(user_agent=USER_AGENT, locale='en-US')
+            print('[scraper] Browser started')
+        except Exception as e:
+            print(f'[scraper] Failed to start browser: {e}')
+            # If there's an existing event loop, try to reuse it
+            _playwright = None
+            _browser = None
+            _context = None
+            raise
     return _context
 
 def close_browser():
