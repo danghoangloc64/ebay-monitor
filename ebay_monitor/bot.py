@@ -4,7 +4,7 @@ import time
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
-from scraper import scrape_item, close_browser
+from scraper import scrape_items, close_browser
 
 load_dotenv()
 
@@ -12,9 +12,10 @@ BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 CONFIG_FILE = 'config.txt'
 STATE_FILE = 'state.json'
-CHECK_INTERVAL = 150        # seconds between each check
+CHECK_INTERVAL = 30         # seconds between each check
 SOLD_THRESHOLD = 10         # alert if sold count in 24h window exceeds this
 RESET_HOUR = 21             # 9 PM — window resets and alert fires
+MAX_CONCURRENT_LINKS = 2    # number of eBay links checked at the same time
 
 # ── Telegram ──────────────────────────────────────────────────────────────────
 
@@ -110,9 +111,8 @@ def check_items(first_run: bool = False):
     window = current_window_date()
     reset_now = is_reset_time()
 
-    for url in urls:
+    for url, data in scrape_items(urls, MAX_CONCURRENT_LINKS):
         print(f'[monitor] Checking {url}')
-        data = scrape_item(url)
         if data is None:
             print(f'[monitor] Could not scrape {url}, skipping')
             continue
@@ -179,18 +179,22 @@ def check_items(first_run: bool = False):
         entry.update(data)
         entry['sold_window'] = sold_data
         state[url] = entry
-
-    save_state(state)
+        save_state(state)
 
 def main():
-    print(f'[monitor] Starting — interval {CHECK_INTERVAL}s, sold alert at {RESET_HOUR}:00')
+    print(
+        f'[monitor] Starting'
+        # f'[monitor] Starting — interval {CHECK_INTERVAL}s, '
+        # f'sold alert at {RESET_HOUR}:00, '
+        # f'max concurrent links {MAX_CONCURRENT_LINKS}'
+    )
     send_message(f'🤖 <b>eBay Monitor đã khởi động!</b>')
 
     try:
-        check_items(first_run=False)
+        check_items(first_run=True)
 
         while True:
-            print(f'[monitor] Sleeping {CHECK_INTERVAL}s...')
+            # print(f'[monitor] Sleeping {CHECK_INTERVAL}s...')
             time.sleep(CHECK_INTERVAL)
             check_items()
     finally:
